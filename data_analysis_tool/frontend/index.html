@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Analysis Tool</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Data Analysis Tool</h1>
+      <p class="subtitle">Upload CSV, Excel, PDF, or XML — get auto analysis, explainability, and ask questions.</p>
+    </header>
+
+    <section id="upload-section" class="card">
+      <h2>Upload files</h2>
+      <p class="hint">Supported: .csv, .xlsx, .xls, .xml, .pdf (tables/text)</p>
+      <div class="dropzone" id="dropzone">
+        <input type="file" id="file-input" multiple accept=".csv,.xlsx,.xls,.xml,.pdf" />
+        <span class="dropzone-text">Drop files here or click to browse</span>
+      </div>
+      <div id="upload-status"></div>
+    </section>
+
+    <section id="analysis-section" class="card hidden">
+      <h2>Analysis</h2>
+      <div id="explainability" class="explainability"></div>
+      <div id="metrics" class="metrics"></div>
+      <div id="profile" class="profile">
+        <h3>Column profile</h3>
+        <div id="profile-content"></div>
+      </div>
+      <div class="export-row">
+        <span>Export:</span>
+        <button type="button" id="export-ppt">PPT</button>
+        <button type="button" id="export-pdf">PDF 1-pager</button>
+        <button type="button" id="export-docx">Document (DOCX)</button>
+      </div>
+    </section>
+
+    <section id="ask-section" class="card">
+      <h2>Ask about your data</h2>
+      <p class="hint">Natural language questions (requires Ollama running locally).</p>
+      <div class="ask-row">
+        <input type="text" id="question-input" placeholder="e.g. What is the distribution of errors?" />
+        <button type="button" id="ask-btn">Ask</button>
+      </div>
+      <div id="answer" class="answer"></div>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
