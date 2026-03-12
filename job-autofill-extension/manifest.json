@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Job Application Autofill",
+  "version": "1.0.0",
+  "description": "Securely saves and reuses your job application answers (Workday, Uber, Greenhouse, Lever, etc.).",
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.workday.com/*",
+    "*://*.myworkdayjobs.com/*",
+    "*://*.greenhouse.io/*",
+    "*://*.lever.co/*",
+    "*://*.jobvite.com/*",
+    "*://*.smartrecruiters.com/*",
+    "*://*.eightfold.ai/*",
+    "*://*.uber.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Job Autofill"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.workday.com/*",
+        "*://*.myworkdayjobs.com/*",
+        "*://*.greenhouse.io/*",
+        "*://*.lever.co/*",
+        "*://*.jobvite.com/*",
+        "*://*.smartrecruiters.com/*",
+        "*://*.eightfold.ai/*",
+        "*://*.uber.com/*"
+      ],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
