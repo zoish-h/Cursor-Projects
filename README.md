@@ -17,6 +17,10 @@ A Pygame platformer: survive the Martian terrain with obstacles, power-ups, and 
 
 - **Run:** `py platformer.py` (requires `pygame` — see `requirements.txt` in repo or `martian_game/requirements.txt`)
 
+### [Job Application Autofill (Chrome Extension)](job-autofill-extension/)
+
+Chrome extension that securely auto-fills repeated job application fields (experience, dates, survey questions, etc.) across common ATS platforms like Workday, Greenhouse, Lever, Jobvite, SmartRecruiters, Eightfold, and Uber careers pages. All data is stored locally in your browser and can be searched and cleared per site.
+
 ### martian_game/
 
 Alternate or extended version of the platformer game (includes `platformer.py` and `leaderboard.json`).
